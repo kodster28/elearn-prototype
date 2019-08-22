@@ -16,11 +16,14 @@ export class SlideComponent implements OnInit {
     }
 
   nextSlide(): void {
-    this.currentSlide++;
+    if (this.currentSlide < slideData.length - 1) {
+      this.currentSlide++;
+    }
 
     }
     previousSlide(): void {
-      this.currentSlide--;
-
+      if (this.currentSlide > 0) {
+        this.currentSlide--;
+      }
     }
 }

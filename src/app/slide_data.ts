@@ -1,16 +1,19 @@
 export const slideData = [
     {
         slide_number: 1,
+        slide_type: 'blue',
         slide_title: 'Slide 1',
         slide_content: ['This is the first paragraph.', 'This is the second paragraph.']
     },
     {
         slide_number: 2,
+        slide_type: 'red',
         slide_title: 'Slide 2',
         slide_content: ['Here\'s something completely different!', 'This is the second paragraph of Slide 2.']
     },
     {
         slide_number: 3,
+        slide_type: 'purple',
         slide_title: 'Slide 3',
         slide_content: ['This is the first paragraph of Slide 3.', 'This is the second paragraph of Slide 3.'],
         // tslint:disable-next-line: max-line-length

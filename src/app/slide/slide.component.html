@@ -1,6 +1,9 @@
-<h1>{{slideData[currentSlide].slide_title}}</h1>
-<p *ngFor = "let paragraph of slideData[currentSlide].slide_content">{{paragraph}}</p>
-<img *ngIf = "slideData[currentSlide].slide_image" src={{slideData[currentSlide].slide_image}}>
-<button (click)="previousSlide()">Back</button>
-<button (click)="nextSlide()">Next</button>
-
+<div class = {{slideData[currentSlide].slide_type}}>
+  <h1>{{slideData[currentSlide].slide_title}}</h1>
+  <p *ngFor = "let paragraph of slideData[currentSlide].slide_content">{{paragraph}}</p>
+  <img *ngIf = "slideData[currentSlide].slide_image" src={{slideData[currentSlide].slide_image}}>
+</div>
+<div>
+  <button (click)="previousSlide()">Back</button>
+  <button (click)="nextSlide()">Next</button>
+</div>
