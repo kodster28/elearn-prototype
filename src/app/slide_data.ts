@@ -3,7 +3,7 @@ export const slideData = [
         slide_number: 1,
         slide_type: 'blue',
         slide_title: 'Slide 1',
-        slide_content: ['This is the first paragraph.', 'This is the second paragraph.']
+        slide_content: ['Mary is the (second) best!', 'This is the second paragraph.']
     },
     {
         slide_number: 2,
