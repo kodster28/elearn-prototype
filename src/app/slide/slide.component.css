@@ -1,3 +1,22 @@
+#slide {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#slide_content {
+  width: 70%;
+  align-self: center;
+}
+
+#nav {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  width: 15%;
+  border: 2px solid maroon;
+}
+
 .blue {
   color: blue;
 }

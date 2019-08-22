@@ -1,9 +1,18 @@
-<div class = {{slideData[currentSlide].slide_type}}>
-  <h1>{{slideData[currentSlide].slide_title}}</h1>
-  <p *ngFor = "let paragraph of slideData[currentSlide].slide_content">{{paragraph}}</p>
-  <img *ngIf = "slideData[currentSlide].slide_image" src={{slideData[currentSlide].slide_image}}>
-</div>
-<div>
-  <button (click)="previousSlide()">Back</button>
-  <button (click)="nextSlide()">Next</button>
+<div id = 'slide'>
+    <div id='nav'>
+        <li>
+          <ul *ngFor= "let slide of slideData; let i = index"><button (click)="setValue(i)">{{slide.slide_title}}</button></ul>
+        </li>
+      </div>
+
+    <div id = "slide_content" class = {{slideData[currentSlide].slide_type}}>
+      <h1>{{slideData[currentSlide].slide_title}}</h1>
+      <p *ngFor = "let paragraph of slideData[currentSlide].slide_content">{{paragraph}}</p>
+      <img *ngIf = "slideData[currentSlide].slide_image" src={{slideData[currentSlide].slide_image}}>
+    <div>
+      <button (click)="previousSlide()">Back</button>
+      <button (click)="nextSlide()">Next</button>
+    </div>
+    </div>
+
 </div>

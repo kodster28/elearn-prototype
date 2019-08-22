@@ -26,4 +26,8 @@ export class SlideComponent implements OnInit {
         this.currentSlide--;
       }
     }
+
+    setValue(input): void {
+      this.currentSlide = input;
+    }
 }
