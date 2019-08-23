@@ -10,14 +10,14 @@ export const slideData = [
         slide_type: 'red',
         slide_title: 'Slide 2',
         slide_content: ['Here\'s something completely different!', 'This is the second paragraph of Slide 2.'],
-        slide_audio: '../assets/Recording.mp3'
+        slide_audio: './assets/Recording.mp3'
     },
     {
       slide_number: 3,
       slide_type: 'blue',
       slide_title: 'Slide 3',
       slide_content: ['Here\'s something completely different!', 'This is the second paragraph of Slide 2.'],
-      slide_video: '../assets/Insight_designer.mp4'
+      slide_video: './assets/Insight_designer.mp4'
   },
     {
         slide_number: 4,
