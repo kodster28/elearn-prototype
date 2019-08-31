@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-import { slideData } from '../slide_data';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-slide',
@@ -8,15 +6,15 @@ import { slideData } from '../slide_data';
   styleUrls: ['./slide.component.css']
 })
 export class SlideComponent implements OnInit {
-  slideData = slideData;
   currentSlide = 0;
+  @Input() apiResponse: object;
   constructor() { }
 
   ngOnInit(): void {
     }
 
   nextSlide(): void {
-    if (this.currentSlide < slideData.length - 1) {
+    if (this.currentSlide < this.apiResponse.slides.length - 1) {
       this.currentSlide++;
     }
 

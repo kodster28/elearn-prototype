@@ -1,21 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ApiServiceService } from '../app/api-service.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'elearn-prototype';
+export class AppComponent implements OnInit {
+  title = 'elearning-prototype';
+  private apiUrl = 'https://4b9ee35b-edf7-4852-9679-4036c5592c9b.mock.pstmn.io/slides';
 
-  constructor(private svc: ApiServiceService, private http: HttpClient) {
-    this.svc.printToConsole('Got the service');
+  public apiResponse: any;
+  public test: any;
+
+  constructor(private http: HttpClient) {
   }
 
   ngOnInit() {
-    let obs = this.http.get('https://randomuser.me/api/?results=1');
-    obs.subscribe((response) => console.log(response));
+    this.getAPIData(this.apiUrl);
+  }
+
+  getAPIData(url: string) {
+    this.apiResponse = {};
+    this.http.get(url).subscribe((response) => {
+      this.apiResponse = response;
+      console.log(this.apiResponse);
+    });
   }
 }

@@ -1,19 +1,19 @@
-<div id = 'slide'>
-    <div id='nav'>
+<div id = 'slide' *ngIf="apiResponse">
+    <div id='nav' *ngIf="apiResponse">
         <li>
-          <ul *ngFor= "let slide of slideData; let i = index"><button (click)="setValue(i)">{{slide.slide_title}}</button></ul>
+          <ul *ngFor= "let slide of apiResponse.slides; let i = index"><button (click)="setValue(i)">{{slide.slide_title}}</button></ul>
         </li>
       </div>
 
-    <div id = "slide_content" class = {{slideData[currentSlide].slide_type}}>
-      <h1>{{slideData[currentSlide].slide_title}}</h1>
-      <p *ngFor = "let paragraph of slideData[currentSlide].slide_content">{{paragraph}}</p>
-      <img *ngIf = "slideData[currentSlide].slide_image" src={{slideData[currentSlide].slide_image}}>
-      <video *ngIf = "slideData[currentSlide].slide_video" width="320" height="240" controls>
-        <source [src]="slideData[currentSlide].slide_video" type="video/mp4">
+    <div id = "slide_content" class = {{apiResponse.slides[currentSlide].slide_type}}>
+      <h1>{{apiResponse.slides[currentSlide].slide_title}}</h1>
+      <p *ngFor = "let paragraph of apiResponse.slides[currentSlide].slide_content">{{paragraph}}</p>
+      <img *ngIf = "apiResponse.slides[currentSlide].slide_image" src={{apiResponse.slides[currentSlide].slide_image}}>
+      <video *ngIf = "apiResponse.slides[currentSlide].slide_video" width="320" height="240" controls>
+        <source [src]="apiResponse.slides[currentSlide].slide_video" type="video/mp4">
       </video>
-      <audio *ngIf = "slideData[currentSlide].slide_audio" controls autoplay>
-        <source  [src]="slideData[currentSlide].slide_audio" type="audio/mpeg">
+      <audio *ngIf = "apiResponse.slides[currentSlide].slide_audio" controls autoplay>
+        <source  [src]="apiResponse.slides[currentSlide].slide_audio" type="audio/mpeg">
       </audio>
     <div>
       <button (click)="previousSlide()">Back</button>
