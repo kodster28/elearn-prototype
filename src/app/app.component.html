@@ -1,8 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+  <div *ngIf = "!showSlides">
   <h1>
     Welcome to {{ title }}!
   </h1>
 
-  <app-slide [apiResponse] = "apiResponse"></app-slide>
+
+  <p>Ready to begin?</p>
+  <button (click) = "showSlideComponent()">Start the course!</button>
+  </div>
+
+  <app-slide *ngIf = "showSlides" [apiResponse] = "apiResponse"></app-slide>
+</div>
 

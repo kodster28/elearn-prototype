@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
 
   public apiResponse: any;
   public test: any;
+  public showSlides = false;
 
   constructor(private http: HttpClient) {
   }
@@ -26,5 +27,8 @@ export class AppComponent implements OnInit {
       this.apiResponse = response;
       console.log(this.apiResponse);
     });
+  }
+  public showSlideComponent() {
+    this.showSlides = true;
   }
 }
