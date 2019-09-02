@@ -10,6 +10,8 @@
   <button (click) = "showSlideComponent()">Start the course!</button>
   </div>
 
-  <app-slide *ngIf = "showSlides" [apiResponse] = "apiResponse"></app-slide>
+  <p *ngIf= "showSlides && accessDenied">Your access to this course has been shut off. Please contact one of our sales reps today.</p>
+
+  <app-slide *ngIf = "showSlides && !accessDenied" [apiResponse] = "apiResponse"></app-slide>
 </div>
 

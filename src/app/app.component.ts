@@ -8,11 +8,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
   title = 'elearning-prototype';
-  private apiUrl = 'https://4b9ee35b-edf7-4852-9679-4036c5592c9b.mock.pstmn.io/slides';
+  private apiUrl = 'https://e2c714dd-0248-4a59-acdf-7c452763032c.mock.pstmn.io/slides';
 
   public apiResponse: any;
   public test: any;
   public showSlides = false;
+  public accessDenied = false;
+  public errors: any;
 
   constructor(private http: HttpClient) {
   }
@@ -21,12 +23,17 @@ export class AppComponent implements OnInit {
     this.getAPIData(this.apiUrl);
   }
 
-  getAPIData(url: string) {
+  public getAPIData(url: string) {
     this.apiResponse = {};
-    this.http.get(url).subscribe((response) => {
+    this.http.get(url).subscribe(
+      response => {
       this.apiResponse = response;
       console.log(this.apiResponse);
-    });
+    },
+      error => {
+        this.errors = error;
+        this.accessDenied = true;
+      });
   }
   public showSlideComponent() {
     this.showSlides = true;

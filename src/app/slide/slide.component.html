@@ -1,5 +1,5 @@
-<div id = 'slide' *ngIf="apiResponse">
-    <div id='nav' *ngIf="apiResponse">
+<div id = 'slide'>
+    <div id='nav'>
         <li>
           <ul *ngFor= "let slide of apiResponse.slides; let i = index"><button (click)="setValue(i)">{{slide.slide_title}}</button></ul>
         </li>
