@@ -10,7 +10,9 @@ export class AppComponent implements OnInit {
   title = 'elearning-prototype';
   private apiUrl = 'https://e2c714dd-0248-4a59-acdf-7c452763032c.mock.pstmn.io/slides';
 
-  public apiResponse: any;
+  public apiResponse: object = {
+    slides: []
+  };
   public test: any;
   public showSlides = false;
   public accessDenied = false;
@@ -28,7 +30,6 @@ export class AppComponent implements OnInit {
     this.http.get(url).subscribe(
       response => {
       this.apiResponse = response;
-      console.log(this.apiResponse);
     },
       error => {
         this.errors = error;
