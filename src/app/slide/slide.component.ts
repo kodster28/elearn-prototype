@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SlideComponent implements OnInit {
   currentSlide = 0;
-  @Input() apiResponse: object;
+  @Input() apiResponse: any;
   constructor() { }
 
   ngOnInit(): void {
