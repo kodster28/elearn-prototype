@@ -30,6 +30,7 @@ export class AppComponent implements OnInit {
     this.http.get(url).subscribe(
       response => {
       this.apiResponse = response;
+      console.log(response);
     },
       error => {
         this.errors = error;
